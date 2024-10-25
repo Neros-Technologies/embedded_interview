@@ -9,6 +9,8 @@
   * The program should be able to receive data from UART4 and transmit it to UART5 and vice versa.
   * Both ports are configured as inverted half-duplex. Before you begin the problem, please explain what
   * inverted half-duplex means.
+  * Please take baud rate, buffer size, and any other necessary parameters into consideration.
+  * Ensure that all data is transmitted and received correctly and done with minimal latency. 
   *
   ******************************************************************************
   */
