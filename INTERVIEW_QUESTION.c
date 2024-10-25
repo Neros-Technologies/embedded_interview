@@ -18,10 +18,10 @@
 /* Private variables ---------------------------------------------------------*/
 UART_HandleTypeDef huart4;
 UART_HandleTypeDef huart5;
-DMA_HandleTypeDef hdma_uart4_tx;
-DMA_HandleTypeDef hdma_uart5_tx;
 
 #define BUFFER_SIZE //DEFINE BUFFER SIZE HERE
+uint8_t uart4Buffer[BUFFER_SIZE] = {0};
+uint8_t uart5Buffer[BUFFER_SIZE] = {0};
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
@@ -32,14 +32,24 @@ static void MX_DMA_Init(void);
 static void MX_TIM3_Init(void);
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart);
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size);
+void HAL_UARTEx_TxEventCallback(UART_HandleTypeDef *huart, uint16_t Size);
+
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){
+  //TODO: Add any code here
+}
+
+void HAL_UARTEx_TxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){
+  //TODO: Add any code here
+}
 
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
 {
-	if (huart->Instance == UART5){
+	if (huart->Instance == UART4){
 		//TODO : Add any code here
 	}
 
-	if (huart->Instance == UART4){
+	if (huart->Instance == UART5){
 		//TODO: Add any code here
 	}
 }
